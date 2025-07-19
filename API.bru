@@ -1,0 +1,16 @@
+meta {
+  name: Send Original and Submission files for plagarism check
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5050/check
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  original: @file(/Users/I529010/CodeSpace/python/Plagarism-Checker/sample_data/original.txt)
+  submission: @file(/Users/I529010/CodeSpace/python/Plagarism-Checker/sample_data/submission.txt)
+}
